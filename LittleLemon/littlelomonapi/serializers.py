@@ -14,3 +14,27 @@ class MenuItemSerializer(serializers.ModelSerializer):
         model = MenuItem
         fields = ['id', 'title', 'price',
                   'featured', 'category']
+
+class CartSerializer(serializers.ModelSerializer):
+    user = serializers.StringRelatedField(read_only=True)
+    menuitem = MenuItemSerializer(read_only=True)    
+    
+    class Meta:
+        model = Cart
+        fields = ['user', 'menuitem', 'quantity', 'unit_price', 'price']
+
+class OrderSerializer(serializers.ModelSerializer):
+    user = serializers.StringRelatedField(read_only=True)
+    delivery_crew = serializers.StringRelatedField(read_only=True)
+
+    class Meta:
+        model = Order
+        fields = ['user', 'delivery_crew', 'status', 'total', 'date']
+
+class OrderItemSerializer(serializers.ModelSerializer):
+    order = serializers.StringRelatedField(read_only=True)
+    menuitem = MenuItemSerializer(read_only=True)
+
+    class Meta:
+        model = OrderItem
+        fields = ['order', 'menuitem', 'quantity', 'unit_price', 'price']
