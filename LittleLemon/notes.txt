@@ -2,3 +2,7 @@ superuser:
 	username: adminenko
 	email: adminenko@littlelemon.com
 	pass: cafeboss1991
+
+users:
+	username: npc_one
+	pass: npc112233

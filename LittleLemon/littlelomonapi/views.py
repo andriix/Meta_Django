@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from rest_framework import generics, permissions, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -5,6 +6,9 @@ from .models import Category, MenuItem, Cart, Order, OrderItem
 from .serializers import CategorySerializer, MenuItemSerializer, CartSerializer, OrderSerializer, OrderItemSerializer
 
 # Create your views here.
+def home(request):
+    return HttpResponse("<h1>Welcome to Little Lemon API</h1><p>Final task of API course</p>")
+
 class CategoryView(generics.ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer

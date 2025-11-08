@@ -1,4 +1,4 @@
-from rest_framwork import serializers
+from rest_framework import serializers
 from .models import Category, MenuItem, Cart, Order, OrderItem
 from django.contrib.auth.models import User
 
