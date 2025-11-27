@@ -6,3 +6,11 @@ superuser:
 users:
 	username: npc_one
 	pass: npc112233
+
+managers:
+	username: npc_manager
+	pass: 5CpUR9&L
+
+delivery crew:
+	username: npc_deliver_guy
+	pass: up72kTA*
